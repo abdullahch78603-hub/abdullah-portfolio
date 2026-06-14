@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ABDULLAH — Graphic Designer. Crafting high-converting visuals and impactful brand designs."
+    />
+    <title>ABDULLAH | Graphic Designer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              charcoal: "#0B0B0B",
+              void: "#000000",
+              electric: "#FF6B00",
+              "electric-dim": "#FF5100",
+            },
+            fontFamily: {
+              heading: ["Montserrat", "sans-serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body
+    class="bg-charcoal text-white font-body antialiased overflow-x-hidden selection:bg-electric/30 selection:text-white"
+  >
+    <!-- Grain overlay for premium texture -->
+    <div
+      class="grain-overlay pointer-events-none fixed inset-0 z-[1]"
+      aria-hidden="true"
+    ></div>
+
+    <!-- ========== NAVIGATION ========== -->
+    <header
+      id="site-header"
+      class="site-header fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[min(94%,72rem)]"
+    >
+      <nav
+        class="nav-glass flex items-center justify-between gap-4 px-5 py-3 md:px-8 md:py-4 rounded-full border border-white/10"
+      >
+        <a
+          href="#hero"
+          class="font-heading font-extrabold text-sm md:text-base tracking-[0.2em] text-white hover:text-electric transition-colors"
+        >
+          ABDULLAH
+        </a>
+
+        <ul
+          class="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-white/70"
+        >
+          <li><a href="#about" class="nav-link">About </a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a
+          href="#contact"
+          class="magnetic-btn hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-electric text-charcoal font-heading font-bold text-xs uppercase tracking-wider"
+          data-magnetic
+        >
+          Let's Talk
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button
+          type="button"
+          id="menu-toggle"
+          class="md:hidden flex flex-col gap-1.5 p-2"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="menu-bar w-6 h-0.5 bg-white rounded"></span>
+          <span class="menu-bar w-4 h-0.5 bg-electric rounded ml-auto"></span>
+          <span class="menu-bar w-6 h-0.5 bg-white rounded"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile drawer -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu md:hidden mt-3 rounded-2xl border border-white/10 overflow-hidden"
+        hidden
+      >
+        <ul
+          class="flex flex-col gap-1 p-4 text-sm font-medium uppercase tracking-widest"
+        >
+          <li>
+            <a href="about" class="mobile-nav-link block py-3 px-4 rounded-lg"
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="#skills" class="mobile-nav-link block py-3 px-4 rounded-lg"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="mobile-nav-link block py-3 px-4 rounded-lg"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="mobile-nav-link block py-3 px-4 rounded-lg"
+              >Contact</a
+            >
+          </li>
+          <li class="pt-2">
+            <a
+              href="#contact"
+              class="magnetic-btn flex items-center justify-center w-full py-3 rounded-full bg-electric text-charcoal font-heading font-bold text-xs uppercase"
+              data-magnetic
+            >
+              Let's Talk
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <!-- ========== HERO ========== -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex flex-col justify-center items-center px-6 pt-32 pb-20 z-10"
+      >
+        <div class="hero-content text-center max-w-5xl mx-auto">
+          <p
+            class="reveal-text text-electric text-xs md:text-sm font-medium uppercase tracking-[0.35em] mb-6 opacity-100"
+          >
+            Graphic Designer
+          </p>
+
+          <h1
+            class="hero-title font-heading font-black uppercase leading-[0.85] tracking-tight opacity-100"
+          >
+            <span class="block text-[clamp(3.5rem,15vw,9rem)]">ABDULLAH</span>
+          </h1>
+          <p
+            class="reveal-text mt-8 max-w-2xl mx-auto text-white/60 text-base md:text-lg font-light leading-relaxed opacity-100"
+          >
+            Crafting High-Converting Visuals &amp; Impactful Brand Experiences.
+          </p>
+          <div class="mt-4 flex flex-wrap justify-center gap-3">
+            <span class="stat-pill">Open to Work</span>
+            <span class="stat-pill">Remote</span>
+            <span class="stat-pill">Freelance</span>
+            <span class="stat-pill">Project-Based</span>
+          </div>
+          <div
+            class="reveal-text mt-12 flex flex-wrap justify-center gap-4 opacity-100"
+          >
+            <a
+              href="#portfolio"
+              class="magnetic-btn inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-sm font-medium hover:border-electric hover:text-electric transition-colors"
+              data-magnetic
+            >
+              View Portfolio
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              class="magnetic-btn inline-flex items-center px-8 py-4 rounded-full bg-electric text-charcoal font-heading font-bold text-sm uppercase tracking-wider"
+              data-magnetic
+            >
+              Start a Project
+            </a>
+          </div>
+        </div>
+        <div
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs uppercase tracking-widest"
+        >
+          <span>Scroll</span>
+          <span
+            class="scroll-indicator w-px h-12 bg-gradient-to-b from-electric to-transparent"
+          ></span>
+        </div>
+      </section>
+
+      <!-- ========== ABOUT ========== -->
+      <section id="about" class="section-pad relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <!-- Profile portrait (not used in 3D canvas) -->
+            <div
+              class="lg:col-span-4 flex justify-center lg:justify-start order-2 lg:order-1"
+            >
+              <figure class="profile-frame" data-profile-tilt>
+                <div class="profile-frame-glow" aria-hidden="true"></div>
+
+                <img
+                  src="assets/insta profile.png"
+                  alt="ABDULLAH — Graphic Designer based in Lahore"
+                  class="profile-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+
+                <figcaption
+                  class="profile-caption font-heading text-xs uppercase tracking-[0.25em] text-white/50 mt-5 text-center lg:text-left"
+                >
+                  Lahore · PK
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="lg:col-span-8 order-1 lg:order-2">
+              <span class="section-label reveal-heading">About Me</span>
+              <h2
+                class="section-title reveal-heading mt-4 font-heading font-extrabold text-3xl md:text-5xl leading-tight"
+              >
+                Visuals That<br /><span class="text-electric">Convert.</span>
+              </h2>
+              <p
+                class="about-text mt-8 text-white/65 text-base md:text-lg leading-relaxed"
+              >
+                I am a Lahore-based Graphic Designer and currently serve as
+                Design Head at Zelt Agency (Since June 2026). I am dedicated to
+                elevating brand presence through strategic visual communication
+                and modern design aesthetics, creating visuals that not only
+                look exceptional but also drive meaningful engagement and
+                conversions.
+              </p>
+              <p
+                class="about-text mt-6 text-white/65 text-base md:text-lg leading-relaxed"
+              >
+                From high-converting social media campaigns to marketing
+                materials and advertising creatives, I deliver visual excellence
+                that commands attention. I am also open to remote, freelance,
+                and project-based opportunities with international clients,
+                while remaining available for on-site collaborations within
+                Lahore.
+              </p>
+              <div class="mt-10 flex flex-wrap gap-3">
+                <span class="stat-pill">Design Head · Zelt Agency</span>
+                <span class="stat-pill">Since June 2026</span>
+                <span class="stat-pill">Remote Worldwide</span>
+                <span class="stat-pill">Lahore On-Site</span>
+                <span class="stat-pill">Freelance & Project-Based</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== EXPERTISE & TOOLS ========== -->
+      <section id="skills" class="section-pad relative z-10 bg-void/50">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="section-label reveal-heading">Expertise</span>
+            <h2
+              class="section-title reveal-heading mt-4 font-heading font-extrabold text-3xl md:text-5xl"
+            >
+              Skills &amp; <span class="text-electric">Tools</span>
+            </h2>
+            <p
+              class="skills-intro mt-6 text-white/70 text-base md:text-lg leading-relaxed"
+            >
+              Two core pillars—high-converting visual design and accurate data
+              systems—built to grow your brand, boost engagement, and streamline
+              business operations.
+            </p>
+          </div>
+
+          <div class="skills-grid grid md:grid-cols-2 gap-6 md:gap-8">
+            <!-- Card 1: Graphic & Brand Design -->
+            <article class="skill-card group" data-tilt>
+              <div class="skill-card-inner">
+                <span class="skill-pillar-tag">Pillar 01</span>
+                <div class="skill-icon-wrap">
+                  <svg
+                    class="w-8 h-8 text-electric"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h3 class="font-heading font-bold text-xl md:text-2xl mt-5">
+                  Graphic &amp; Brand Design
+                </h3>
+                <p
+                  class="skill-lead mt-4 text-white/80 text-sm md:text-base leading-relaxed"
+                >
+                  Specializing in high-converting
+                  <strong class="text-white font-medium"
+                    >Social Media Post Designs</strong
+                  >,
+                  <strong class="text-white font-medium"
+                    >Marketing Materials</strong
+                  >,
+                  <strong class="text-white font-medium">Poster Designs</strong
+                  >, and complete
+                  <strong class="text-white font-medium"
+                    >Ad Creatives / Campaign Designs</strong
+                  >.
+                </p>
+                <ul class="skill-list mt-6 space-y-2.5">
+                  <li>Social media posts &amp; carousel creatives</li>
+                  <li>Marketing flyers, banners &amp; brand assets</li>
+                  <li>Poster &amp; print-ready layouts</li>
+                  <li>Full ad campaigns &amp; paid-social creative sets</li>
+                </ul>
+                <p class="skill-tools-label mt-8">Tools I use</p>
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tool-badge">Photoshop</span>
+                  <span class="tool-badge">Illustrator</span>
+                  <span class="tool-badge">Canva</span>
+                  <span class="tool-badge">AI Tools</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Excel & Data Management -->
+            <article class="skill-card group" data-tilt>
+              <div class="skill-card-inner">
+                <span class="skill-pillar-tag">Pillar 02</span>
+
+                <div class="skill-icon-wrap">
+                  <svg
+                    class="w-8 h-8 text-electric"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.5"
+                      d="M9 17v-6m3 6V7m3 10v-4M5 21h14M7 3h10a2 2 0 012 2v14H5V5a2 2 0 012-2z"
+                    />
+                  </svg>
+                </div>
+
+                <h3 class="font-heading font-bold text-xl md:text-2xl mt-5">
+                  Excel &amp; Data Management
+                </h3>
+
+                <p
+                  class="skill-lead mt-4 text-white/80 text-sm md:text-base leading-relaxed"
+                >
+                  Specializing in
+                  <strong class="text-white font-medium">Excel Reporting</strong
+                  >,
+                  <strong class="text-white font-medium"
+                    >data organization</strong
+                  >, and accurate
+                  <strong class="text-white font-medium"
+                    >data management workflows</strong
+                  >
+                  for business operations and decision-making.
+                </p>
+
+                <ul class="skill-list mt-6 space-y-2.5">
+                  <li>Advanced Excel formulas & functions</li>
+                  <li>Data cleaning, sorting & validation</li>
+                  <li>Reports, dashboards & pivot tables</li>
+                  <li>Accurate data entry & record management</li>
+                </ul>
+
+                <p class="skill-tools-label mt-8">Tools I use</p>
+
+                <div class="mt-3 flex flex-wrap gap-2">
+                  <span class="tool-badge">Microsoft Excel</span>
+                  <span class="tool-badge">Google Sheets</span>
+                  <span class="tool-badge">Power Query</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ========== PORTFOLIO ========== -->
+      <section id="portfolio">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2
+            class="section-title reveal-heading mt-4 font-heading font-extrabold text-3xl md:text-5xl"
+          >
+            Portfolio
+          </h2>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- CAROUSEL ITEMS -->
+          <div class="portfolio-card carousel-item" data-carousel="carousel1">
+            <img src="assets/carouselpost.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Zelt Carousel Post</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-card carousel-item" data-carousel="carousel2">
+            <img src="assets/carousel.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Audionic Carousel Post</h3>
+            </div>
+          </div>
+
+          <!-- SINGLE IMAGE ITEMS -->
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/Himmel skardu.jpg"
+          >
+            <img src="assets/Himmel skardu.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Ad Creative For Himmel Skardu</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/emirates electronics vaccum design.jpg"
+          >
+            <img src="assets/emirates electronics vaccum design.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Vaccum Post for Emirates Electronics</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/xpos digital task.jpg"
+          >
+            <img src="assets/xpos digital task.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Ad Creative for agency</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/pond face wash post.jpg"
+          >
+            <img src="assets/pond face wash post.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Ponds Face Wash Post</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/Success Factor Task.jpg"
+          >
+            <img src="assets/Success Factor Task.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Ad Creative For Success Factor</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/deduce aesthetics skin care task.jpg"
+          >
+            <img src="assets/deduce aesthetics skin care task.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Post For Deduce Aesthetics</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/torch design.jpg"
+          >
+            <img src="assets/torch design.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Torch Post Design</h3>
+            </div>
+          </div>
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/2nd torch design.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Torch Post Design</h3>
+            </div>
+          </div>
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/BMW POST.jpg"
+          >
+            <img src="assets/BMW POST.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>BMW Post Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/cricket bat ad design.jpg"
+          >
+            <img src="assets/cricket bat ad design.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Cricket Ad Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/pool 2nd post.jpg"
+          >
+            <img src="assets/pool 2nd post.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Pool Ad Creative Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/sofa design.jpg"
+          >
+            <img src="assets/sofa design.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Sofa Post Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/vince face wash post.jpg"
+          >
+            <img src="assets/vince face wash post.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Vince Post Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/water post.jpg"
+          >
+            <img src="assets/water post.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Water Post Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/2nd fashion post.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Fashion Post Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/brand-identity.jpg"
+          >
+            <img src="assets/Logo Design.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Neon Drift Logo Design</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/web-banner.jpg"
+          >
+            <img src="assets/design task.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Hello Doc Web Banner</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- MODAL -->
+        <div class="carousel-modal" id="imageModal">
+          <div class="carousel-box">
+            <button class="close-btn" id="closeModal">&times;</button>
+
+            <img id="modalImage" src="" alt="" />
+
+            <!-- carousel only controls -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT ========== -->
+      <section id="contact" class="section-pad relative z-10 pb-32">
+        <div class="container mx-auto px-6 max-w-6xl">
+          <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <!-- Left Content -->
+            <div>
+              <span class="section-label reveal-heading">Contact</span>
+
+              <h2
+                class="section-title reveal-heading mt-4 font-heading font-extrabold text-3xl md:text-5xl"
+              >
+                Let's Create<br />
+                <span class="text-electric">Something Bold.</span>
+              </h2>
+
+              <p class="mt-6 text-white/55 max-w-md">
+                Ready to elevate your brand visuals and strengthen your brand
+                presence? Drop a message—I typically respond within 24 hours.
+              </p>
+
+              <div class="mt-10 space-y-4 text-sm">
+                <p class="text-white/40">
+                  Based in <span class="text-white">Lahore, Pakistan</span>
+                </p>
+
+                <p class="text-white/40">Open for freelance &amp; retainers</p>
+              </div>
+            </div>
+
+            <!-- Right Side LinkedIn Card -->
+            <div
+              class="flex flex-col items-center text-center p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm"
+            >
+              <a
+                href="https://www.linkedin.com/in/ch-abdullah-488344390/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group"
+              >
+                <img
+                  src="assets/linkedin-logo.png"
+                  alt="LinkedIn"
+                  class="w-14 h-14 object-contain transition-transform duration-300 group-hover:scale-110"
+                />
+              </a>
+
+              <h3 class="font-heading font-bold text-2xl mt-6">
+                Connect on LinkedIn
+              </h3>
+
+              <p class="mt-4 text-white/60 max-w-sm">
+                Interested in freelance, remote, project-based, or full-time
+                opportunities? Let's connect on LinkedIn and discuss how we can
+                work together.
+              </p>
+
+              <a
+                href="https://www.linkedin.com/in/ch-abdullah-488344390/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="magnetic-btn inline-flex items-center px-8 py-4 rounded-full bg-electric text-charcoal font-heading font-bold text-sm uppercase tracking-wider mt-8"
+              >
+                View LinkedIn Profile
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="relative z-10 border-t border-white/5 py-8">
+      <div
+        class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40"
+      >
+        <p class="font-heading font-bold tracking-widest text-white/60">
+          ABDULLAH
+        </p>
+        <p>&copy; <span id="year"></span> All rights reserved.</p>
+        <div class="flex gap-6 uppercase text-xs tracking-widest">
+          <a href="#portfolio" class="hover:text-electric transition-colors"
+            >Portfolio</a
+          >
+          <a href="#contact" class="hover:text-electric transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+    <!-- App modules -->
+    <script src="js/three-hero.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/portfolio-carousel.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
