@@ -571,6 +571,38 @@ body {
   pointer-events: none;
   transition: transform 0.25s ease, color 0.25s ease, font-size 0.25s ease;
 }
+/* ——— Footer Social Links ——— */
+.social-links {
+  align-items: center;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  color: rgba(0, 0, 0, 0.65);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.social-links a svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  border-color: var(--electric);
+  box-shadow: 0 4px 16px rgba(42, 92, 255, 0.15);
+  color: var(--electric);
+}
 
 /* Float label up on focus or when filled */
 .float-field input:focus + label,
