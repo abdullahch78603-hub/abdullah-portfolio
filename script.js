@@ -13,6 +13,7 @@ function openModal(src) {
     modalImg.src = src;
 }
 
+
 // =============================
 // CLOSE MODAL
 // =============================
