@@ -8,7 +8,6 @@
       content="ABDULLAH — Graphic Designer. Crafting high-converting visuals and impactful brand designs."
     />
     <title>ABDULLAH | Graphic Designer</title>
-    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
     <!-- Google Fonts -->
@@ -26,10 +25,10 @@
         theme: {
           extend: {
             colors: {
-              charcoal: "#0B0B0B",
-              void: "#000000",
-              electric: "#FF6B00",
-              "electric-dim": "#FF5100",
+              charcoal: "#FFFFFF",
+              void: "#F5F6F8",
+              electric: "#2A5CFF",
+              "electric-dim": "#1E46E0",
             },
             fontFamily: {
               heading: ["Montserrat", "sans-serif"],
@@ -48,7 +47,7 @@
 
   
 
-    class="bg-charcoal text-white font-body antialiased overflow-x-hidden selection:bg-electric/30 selection:text-white"
+    class="bg-charcoal text-black font-body antialiased overflow-x-hidden selection:bg-electric/20 selection:text-black"
   >
 
 
@@ -64,17 +63,17 @@
       class="site-header fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[min(94%,72rem)]"
     >
       <nav
-        class="nav-glass flex items-center justify-between gap-4 px-5 py-3 md:px-8 md:py-4 rounded-full border border-white/10"
+        class="nav-glass flex items-center justify-between gap-4 px-5 py-3 md:px-8 md:py-4 rounded-full border border-black/10"
       >
         <a
           href="#hero"
-          class="font-heading font-extrabold text-sm md:text-base tracking-[0.2em] text-white hover:text-electric transition-colors"
+          class="font-heading font-extrabold text-sm md:text-base tracking-[0.2em] text-black hover:text-electric transition-colors"
         >
           ABDULLAH
         </a>
 
         <ul
-          class="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-white/70"
+          class="hidden md:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-black/70"
         >
           <li><a href="#about" class="nav-link">About </a></li>
           <li><a href="#skills" class="nav-link">Skills</a></li>
@@ -84,7 +83,7 @@
 
         <a
           href="#contact"
-          class="magnetic-btn hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-electric text-charcoal font-heading font-bold text-xs uppercase tracking-wider"
+          class="magnetic-btn hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-electric text-white font-heading font-bold text-xs uppercase tracking-wider"
           data-magnetic
         >
           Let's Talk
@@ -98,16 +97,16 @@
           aria-label="Open menu"
           aria-expanded="false"
         >
-          <span class="menu-bar w-6 h-0.5 bg-white rounded"></span>
+          <span class="menu-bar w-6 h-0.5 bg-black rounded"></span>
           <span class="menu-bar w-4 h-0.5 bg-electric rounded ml-auto"></span>
-          <span class="menu-bar w-6 h-0.5 bg-white rounded"></span>
+          <span class="menu-bar w-6 h-0.5 bg-black rounded"></span>
         </button>
       </nav>
 
       <!-- Mobile drawer -->
       <div
         id="mobile-menu"
-        class="mobile-menu md:hidden mt-3 rounded-2xl border border-white/10 overflow-hidden"
+        class="mobile-menu md:hidden mt-3 rounded-2xl border border-black/10 overflow-hidden"
         hidden
       >
         <ul
@@ -140,7 +139,7 @@
           <li class="pt-2">
             <a
               href="#contact"
-              class="magnetic-btn flex items-center justify-center w-full py-3 rounded-full bg-electric text-charcoal font-heading font-bold text-xs uppercase"
+              class="magnetic-btn flex items-center justify-center w-full py-3 rounded-full bg-electric text-white font-heading font-bold text-xs uppercase"
               data-magnetic
             >
               Let's Talk
@@ -169,7 +168,7 @@
             <span class="block text-[clamp(3.5rem,15vw,9rem)]">ABDULLAH</span>
           </h1>
           <p
-            class="reveal-text mt-8 max-w-2xl mx-auto text-white/60 text-base md:text-lg font-light leading-relaxed opacity-100"
+            class="reveal-text mt-8 max-w-2xl mx-auto text-black/60 text-base md:text-lg font-light leading-relaxed opacity-100"
           >
             Crafting High-Converting Visuals &amp; Impactful Brand Experiences.
           </p>
@@ -184,7 +183,7 @@
           >
             <a
               href="#portfolio"
-              class="magnetic-btn inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 text-sm font-medium hover:border-electric hover:text-electric transition-colors"
+              class="magnetic-btn inline-flex items-center gap-2 px-8 py-4 rounded-full border border-black/20 text-sm font-medium hover:border-electric hover:text-electric transition-colors"
               data-magnetic
             >
               View Portfolio
@@ -204,7 +203,7 @@
             </a>
             <a
               href="#contact"
-              class="magnetic-btn inline-flex items-center px-8 py-4 rounded-full bg-electric text-charcoal font-heading font-bold text-sm uppercase tracking-wider"
+              class="magnetic-btn inline-flex items-center px-8 py-4 rounded-full bg-electric text-white font-heading font-bold text-sm uppercase tracking-wider"
               data-magnetic
             >
               Start a Project
@@ -212,7 +211,7 @@
           </div>
         </div>
         <div
-          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs uppercase tracking-widest"
+          class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-black/40 text-xs uppercase tracking-widest"
         >
           <span>Scroll</span>
           <span
@@ -233,7 +232,7 @@
                 <div class="profile-frame-glow" aria-hidden="true"></div>
 
                 <img
-                  src="assets/insta profile.png"
+                  src="assets/pic.png"
                   alt="ABDULLAH — Graphic Designer based in Lahore"
                   class="profile-image"
                   loading="lazy"
@@ -241,7 +240,7 @@
                 />
 
                 <figcaption
-                  class="profile-caption font-heading text-xs uppercase tracking-[0.25em] text-white/50 mt-5 text-center lg:text-left"
+                  class="profile-caption font-heading text-xs uppercase tracking-[0.25em] text-black/50 mt-5 text-center lg:text-left"
                 >
                   Lahore · PK
                 </figcaption>
@@ -256,7 +255,7 @@
                 Visuals That<br /><span class="text-electric">Convert.</span>
               </h2>
               <p
-                class="about-text mt-8 text-white/65 text-base md:text-lg leading-relaxed"
+                class="about-text mt-8 text-black/65 text-base md:text-lg leading-relaxed"
               >
                 I am a Lahore-based Graphic Designer and currently serve as
                 Design Head at Zelt Agency (Since June 2026). I am dedicated to
@@ -266,7 +265,7 @@
                 conversions.
               </p>
               <p
-                class="about-text mt-6 text-white/65 text-base md:text-lg leading-relaxed"
+                class="about-text mt-6 text-black/65 text-base md:text-lg leading-relaxed"
               >
                 From high-converting social media campaigns to marketing
                 materials and advertising creatives, I deliver visual excellence
@@ -288,7 +287,7 @@
       </section>
 
       <!-- ========== EXPERTISE & TOOLS ========== -->
-      <section id="skills" class="section-pad relative z-10 bg-void/50">
+      <section id="skills" class="section-pad relative z-10 bg-void/60">
         <div class="container mx-auto px-6 max-w-6xl">
           <div class="text-center max-w-3xl mx-auto mb-16">
             <span class="section-label reveal-heading">Expertise</span>
@@ -298,7 +297,7 @@
               Skills &amp; <span class="text-electric">Tools</span>
             </h2>
             <p
-              class="skills-intro mt-6 text-white/70 text-base md:text-lg leading-relaxed"
+              class="skills-intro mt-6 text-black/70 text-base md:text-lg leading-relaxed"
             >
               Two core pillars—high-converting visual design and accurate data
               systems—built to grow your brand, boost engagement, and streamline
@@ -330,18 +329,18 @@
                   Graphic &amp; Brand Design
                 </h3>
                 <p
-                  class="skill-lead mt-4 text-white/80 text-sm md:text-base leading-relaxed"
+                  class="skill-lead mt-4 text-black/80 text-sm md:text-base leading-relaxed"
                 >
                   Specializing in high-converting
-                  <strong class="text-white font-medium"
+                  <strong class="text-black font-medium"
                     >Social Media Post Designs</strong
                   >,
-                  <strong class="text-white font-medium"
+                  <strong class="text-black font-medium"
                     >Marketing Materials</strong
                   >,
-                  <strong class="text-white font-medium">Poster Designs</strong
+                  <strong class="text-black font-medium">Poster Designs</strong
                   >, and complete
-                  <strong class="text-white font-medium"
+                  <strong class="text-black font-medium"
                     >Ad Creatives / Campaign Designs</strong
                   >.
                 </p>
@@ -387,15 +386,15 @@
                 </h3>
 
                 <p
-                  class="skill-lead mt-4 text-white/80 text-sm md:text-base leading-relaxed"
+                  class="skill-lead mt-4 text-black/80 text-sm md:text-base leading-relaxed"
                 >
                   Specializing in
-                  <strong class="text-white font-medium">Excel Reporting</strong
+                  <strong class="text-black font-medium">Excel Reporting</strong
                   >,
-                  <strong class="text-white font-medium"
+                  <strong class="text-black font-medium"
                     >data organization</strong
                   >, and accurate
-                  <strong class="text-white font-medium"
+                  <strong class="text-black font-medium"
                     >data management workflows</strong
                   >
                   for business operations and decision-making.
@@ -432,6 +431,35 @@
 
         <div class="portfolio-grid">
           <!-- CAROUSEL ITEMS -->
+
+          <div class="portfolio-card carousel-item" data-carousel="carousel2">
+            <img src="assets/itel s25 storytelling comapign.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Productstorytelling compaign</h3>
+            </div>
+          </div>
+
+           <div class="portfolio-card carousel-item" data-carousel="carousel2">
+            <img src="assets/full compaign.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Personal Branding Carousel</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-card carousel-item" data-carousel="carousel2">
+            <img src="assets/lofer full compaign.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Shoes Carousel for Instagram</h3>
+            </div>
+          </div>
+
+          <div class="portfolio-card carousel-item" data-carousel="carousel2">
+            <img src="assets/full.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Personal Branding Carousel(2)</h3>
+            </div>
+          </div>
+           
           <div class="portfolio-card carousel-item" data-carousel="carousel1">
             <img src="assets/carouselpost.jpg" alt="" />
             <div class="portfolio-overlay">
@@ -467,19 +495,7 @@
             </div>
           </div>
 
-          <div class="portfolio-card carousel-item" data-carousel="carousel2">
-            <img src="assets/apple watch compaign design.png" alt="" />
-            <div class="portfolio-overlay">
-              <h3>Apple Watch Compaign Design</h3>
-            </div>
-          </div>
-
-          <div class="portfolio-card carousel-item" data-carousel="carousel2">
-            <img src="assets/serum compaign design.png" alt="" />
-            <div class="portfolio-overlay">
-              <h3>Serum Compaign Design</h3>
-            </div>
-          </div>
+          
 
           <!-- SINGLE IMAGE ITEMS -->
           <div
@@ -532,15 +548,7 @@
             </div>
           </div>
 
-          <div
-            class="portfolio-card single-item"
-            data-src="assets/deduce aesthetics skin care task.jpg"
-          >
-            <img src="assets/deduce aesthetics skin care task.jpg" alt="" />
-            <div class="portfolio-overlay">
-              <h3>Post For Deduce Aesthetics</h3>
-            </div>
-          </div>
+          
 
           <div
             class="portfolio-card single-item"
@@ -551,6 +559,18 @@
               <h3>Torch Post Design</h3>
             </div>
           </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/INSTA POST.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Post for my Insta
+              </h3>
+            </div>
+          </div>
+          
           <div
             class="portfolio-card single-item"
             data-src="assets/2nd torch design.jpg"
@@ -610,15 +630,7 @@
             </div>
           </div>
 
-          <div
-            class="portfolio-card single-item"
-            data-src="assets/water post.jpg"
-          >
-            <img src="assets/water post.jpg" alt="" />
-            <div class="portfolio-overlay">
-              <h3>Water Post Design</h3>
-            </div>
-          </div>
+          
 
           <div
             class="portfolio-card single-item"
@@ -627,6 +639,68 @@
             <img src="assets/2nd fashion post.jpg" alt="" />
             <div class="portfolio-overlay">
               <h3>Fashion Post Design</h3>
+            </div>
+          </div>
+
+          
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/photography.jpg" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Ai powered Photography</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/skin retreat photoshot.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>Skin Retreat Photography</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/khadi shoot.jpg " alt="" />
+            <div class="portfolio-overlay">
+              <h3>AI powered Photography(2)</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/Hawes & Curtis brand shot.png " alt="" />
+            <div class="portfolio-overlay">
+              <h3>AI powered Photography(3)</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/my shoot.png " alt="" />
+            <div class="portfolio-overlay">
+              <h3>AI powered Photography(4)</h3>
+            </div>
+          </div>
+
+          <div
+            class="portfolio-card single-item"
+            data-src="assets/2nd torch design.jpg"
+          >
+            <img src="assets/perfume shoots.jpg " alt="" />
+            <div class="portfolio-overlay">
+              <h3>Perfume Photography</h3>
             </div>
           </div>
 
@@ -647,6 +721,14 @@
             <img src="assets/design task.jpg" alt="" />
             <div class="portfolio-overlay">
               <h3>Hello Doc Web Banner</h3>
+            </div>
+            <div
+            class="portfolio-card single-item"
+            data-src="assets/web-banner.jpg"
+          >
+            <img src="assets/banner.png" alt="" />
+            <div class="portfolio-overlay">
+              <h3>My linkedin banner</h3>
             </div>
 
             <div
@@ -688,23 +770,23 @@
                 <span class="text-electric">Something Bold.</span>
               </h2>
 
-              <p class="mt-6 text-white/55 max-w-md">
+              <p class="mt-6 text-black/55 max-w-md">
                 Ready to elevate your brand visuals and strengthen your brand
                 presence? Drop a message—I typically respond within 24 hours.
               </p>
 
               <div class="mt-10 space-y-4 text-sm">
-                <p class="text-white/40">
-                  Based in <span class="text-white">Lahore, Pakistan</span>
+                <p class="text-black/40">
+                  Based in <span class="text-black">Lahore, Pakistan</span>
                 </p>
 
-                <p class="text-white/40">Open for freelance &amp; retainers</p>
+                <p class="text-black/40">Open for freelance &amp; retainers</p>
               </div>
             </div>
 
             <!-- Right Side LinkedIn Card -->
             <div
-              class="flex flex-col items-center text-center p-8 rounded-3xl border border-white/10 bg-white/[0.02] backdrop-blur-sm"
+              class="flex flex-col items-center text-center p-8 rounded-3xl border border-black/10 bg-black/[0.02] backdrop-blur-sm"
             >
               <a
                 href="https://www.linkedin.com/in/ch-abdullah-488344390/"
@@ -723,7 +805,7 @@
                 Connect on LinkedIn
               </h3>
 
-              <p class="mt-4 text-white/60 max-w-sm">
+              <p class="mt-4 text-black/60 max-w-sm">
                 Interested in freelance, remote, project-based, or full-time
                 opportunities? Let's connect on LinkedIn and discuss how we can
                 work together.
@@ -733,7 +815,7 @@
                 href="https://www.linkedin.com/in/ch-abdullah-488344390/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="magnetic-btn inline-flex items-center px-8 py-4 rounded-full bg-electric text-charcoal font-heading font-bold text-sm uppercase tracking-wider mt-8"
+                class="magnetic-btn inline-flex items-center px-8 py-4 rounded-full bg-electric text-white font-heading font-bold text-sm uppercase tracking-wider mt-8"
               >
                 View LinkedIn Profile
               </a>
@@ -744,11 +826,11 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
-    <footer class="relative z-10 border-t border-white/5 py-8">
+    <footer class="relative z-10 border-t border-black/10 py-8">
       <div
-        class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40"
+        class="container mx-auto px-6 max-w-6xl flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-black/40"
       >
-        <p class="font-heading font-bold tracking-widest text-white/60">
+        <p class="font-heading font-bold tracking-widest text-black/60">
           ABDULLAH
         </p>
         <p>&copy; <span id="year"></span> All rights reserved.</p>
