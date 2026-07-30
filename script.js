@@ -13,7 +13,6 @@ function openModal(src) {
     modalImg.src = src;
 }
 
-
 // =============================
 // CLOSE MODAL
 // =============================
@@ -35,17 +34,25 @@ document.querySelectorAll(".portfolio-card").forEach(card => {
 });
 
 // =============================
-// CLOSE BUTTON
+// CLOSE BUTTON (stop bubbling so it doesn't reopen)
 // =============================
-closeBtn.addEventListener("click", closeModal);
+closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeModal();
+});
+
+// =============================
+// STOP CLICKS INSIDE THE BOX FROM CLOSING/REOPENING
+// =============================
+document.querySelector(".carousel-box").addEventListener("click", (e) => {
+    e.stopPropagation();
+});
 
 // =============================
 // OUTSIDE CLICK CLOSE
 // =============================
-modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
+modal.addEventListener("click", () => {
+    closeModal();
 });
 
 // =============================
