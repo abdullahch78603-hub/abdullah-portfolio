@@ -1,15 +1,15 @@
 /* ============================================
    ABDULLAH Portfolio — Custom Styles
-   Light theme: White background, Black text, Blue accent
+   Light theme: White background, Black text, Green accent
    ============================================ */
 
 :root {
   --charcoal: #ffffff;
   --void: #f5f6f8;
-  --electric: #2a5cff;
-  --electric-dim: #1e46e0;
+  --electric: #4f6f3e;
+  --electric-dim: #3e5730;
   --glass: rgba(0, 0, 0, 0.04);
-  --glow: rgba(42, 92, 255, 0.35);
+  --glow: rgba(79, 111, 62, 0.35);
 }
 
 
@@ -36,6 +36,16 @@ body {
 .site-header.header-hidden {
   transform: translate(-50%, -120%);
   opacity: 0;
+}
+
+/* Hide header completely while the portfolio modal is open */
+body.modal-open .site-header {
+  display: none;
+}
+
+/* Lock page scroll while the portfolio modal is open */
+body.modal-open {
+  overflow: hidden;
 }
 
 .nav-glass {
@@ -75,7 +85,7 @@ body {
 }
 
 .mobile-nav-link:hover {
-  background: rgba(42, 92, 255, 0.08);
+  background: rgba(79, 111, 62, 0.08);
   color: var(--electric);
 }
 
@@ -87,7 +97,7 @@ body {
 }
 
 .magnetic-btn:hover {
-  box-shadow: 0 0 28px var(--glow), 0 0 60px rgba(42, 92, 255, 0.12);
+  box-shadow: 0 0 28px var(--glow), 0 0 60px rgba(79, 111, 62, 0.12);
 }
 
 /* ——— Hero ——— */
@@ -111,6 +121,12 @@ body {
 /* ——— Sections ——— */
 .section-pad {
   padding: clamp(5rem, 12vh, 8rem) 0;
+}
+
+/* Dark variant used by the Portfolio section */
+.section-pad-dark {
+  padding: clamp(5rem, 12vh, 8rem) 0;
+  background-color: #0b0c0a;
 }
 
 .section-label {
@@ -159,7 +175,7 @@ body {
   border-radius: 1.5rem;
   background: radial-gradient(
     ellipse at center,
-    rgba(42, 92, 255, 0.22) 0%,
+    rgba(79, 111, 62, 0.22) 0%,
     transparent 70%
   );
   z-index: 0;
@@ -177,9 +193,9 @@ body {
   border: 2px solid var(--electric);
 
   box-shadow:
-    0 0 0 1px rgba(42, 92, 255, 0.15),
+    0 0 0 1px rgba(79, 111, 62, 0.15),
     0 24px 48px rgba(0, 0, 0, 0.12),
-    0 0 40px rgba(42, 92, 255, 0.12);
+    0 0 40px rgba(79, 111, 62, 0.12);
 
   transition: all 0.4s ease;
 }
@@ -188,9 +204,9 @@ body {
   transform: translateY(-4px);
 
   box-shadow:
-    0 0 0 1px rgba(42, 92, 255, 0.3),
+    0 0 0 1px rgba(79, 111, 62, 0.3),
     0 32px 64px rgba(0, 0, 0, 0.16),
-    0 0 60px rgba(42, 92, 255, 0.2);
+    0 0 60px rgba(79, 111, 62, 0.2);
 }
 
 .profile-caption::before {
@@ -228,8 +244,8 @@ body {
 }
 
 .skill-card:hover .skill-card-inner {
-  border-color: rgba(42, 92, 255, 0.4);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 40px rgba(42, 92, 255, 0.08);
+  border-color: rgba(79, 111, 62, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 0 40px rgba(79, 111, 62, 0.08);
 }
 
 .skill-pillar-tag {
@@ -272,7 +288,7 @@ body {
   height: 6px;
   border-radius: 50%;
   background: var(--electric);
-  box-shadow: 0 0 8px rgba(42, 92, 255, 0.5);
+  box-shadow: 0 0 8px rgba(79, 111, 62, 0.5);
 }
 
 .skill-tools-label {
@@ -291,8 +307,8 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 1rem;
-  background: rgba(42, 92, 255, 0.1);
-  border: 1px solid rgba(42, 92, 255, 0.22);
+  background: rgba(79, 111, 62, 0.1);
+  border: 1px solid rgba(79, 111, 62, 0.22);
 }
 
 .tool-badge {
@@ -302,14 +318,14 @@ body {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border-radius: 9999px;
-  background: rgba(42, 92, 255, 0.08);
-  border: 1px solid rgba(42, 92, 255, 0.22);
+  background: rgba(79, 111, 62, 0.08);
+  border: 1px solid rgba(79, 111, 62, 0.22);
   color: rgba(0, 0, 0, 0.75);
   transition: background 0.3s, transform 0.3s;
 }
 
 .skill-card:hover .tool-badge {
-  background: rgba(42, 92, 255, 0.16);
+  background: rgba(79, 111, 62, 0.16);
 }
 
 .tool-badge:hover {
@@ -318,7 +334,65 @@ body {
 
 /* ===== PORTFOLIO ===== */
 
-/* ===== PORTFOLIO ===== */
+/* Portfolio section sits on a near-black background (.section-pad-dark) */
+
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.portfolio-tab {
+  padding: 0.65rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.portfolio-tab:hover {
+  color: #fff;
+  border-color: rgba(79, 111, 62, 0.5);
+}
+
+.portfolio-tab.active {
+  color: #fff;
+  background: var(--electric);
+  border-color: var(--electric);
+}
+
+.portfolio-panel {
+  display: block;
+}
+
+.portfolio-panel[hidden] {
+  display: none;
+}
+
+.portfolio-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.95rem;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+}
+
+.portfolio-card.video-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .portfolio-grid{
     display:grid;
@@ -327,14 +401,18 @@ body {
     padding:0 20px;
     margin-top:40px;
 }
+
+/* ===== MODAL (single source of truth — fixed z-index + proper scroll) ===== */
 .carousel-modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.85);
+    background:rgba(0,0,0,.9);
     display:none;
     justify-content:center;
     align-items:center;
-    z-index:999;
+    z-index:100000;
+    padding:20px;
+    box-sizing:border-box;
 }
 
 .carousel-box {
@@ -349,28 +427,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .carousel-box img {
+    display: block;
     max-width: 100%;
-    max-height: 85vh;
+    max-height: 80vh;
     width: auto;
     height: auto;
+    min-width: 0;   /* yeh line overflow ka asal fix hai */
     object-fit: contain;
     border-radius: 10px;
+    margin: 0 auto;
 }
-
-
-
 .close-btn{
-    position:absolute;
+    position:sticky;
     top:10px;
     right:15px;
+    align-self:flex-start;
+    margin-left:auto;
     font-size:30px;
-    background:none;
+    background:#fff;
     border:none;
     color:#0b0b0b;
     cursor:pointer;
+    line-height:1;
+    z-index:1;
 }
 
 .nav-buttons{
@@ -388,8 +471,8 @@ body {
     position:relative;
     overflow:hidden;
     border-radius:20px;
-    border:1px solid rgba(42,92,255,.2);
-    background:#f5f6f8;
+    border:1px solid rgba(79,111,62,.25);
+    background:#151611;
     transition:.4s ease;
     min-height:420px;
     
@@ -398,7 +481,7 @@ body {
 
 .portfolio-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 0 30px rgba(42,92,255,.2);
+    box-shadow:0 0 30px rgba(79,111,62,.25);
 }
 
 .portfolio-card img{
@@ -435,6 +518,16 @@ body {
     font-family:'Montserrat',sans-serif;
 }
 
+/* Video cards ke overlay ko click-through bana do, taake video controls kaam karein */
+.portfolio-card.video-item .portfolio-overlay {
+  pointer-events: none;
+}
+
+.portfolio-card.video-item video {
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width:992px){
     .portfolio-grid{
         grid-template-columns:repeat(2,1fr);
@@ -450,60 +543,25 @@ body {
     .portfolio-card{
         min-height:350px;
     }
-    /* ===== MODAL ONLY (ADD THIS) ===== */
 
-.carousel-modal{
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.9);
-    display:none;
-    justify-content:center;
-    align-items:center;
-    z-index:999;
-}
+    .carousel-box{
+        width:90%;
+        max-width:850px;
+        max-height:90vh;
+        text-align:center;
+        position:relative;
+        overflow-y:auto;
+    }
 
-.carousel-box{
-    width:90%;
-    max-width:850px;
-    text-align:center;
-    position:relative;
-}
-
-.carousel-box img{
-    width:100%;
-    max-height:90vh;
-    object-fit:contain;
-    border-radius:10px;
-}
-
-.close-btn{
-    position:absolute;
-    top:10px;
-    right:15px;
-    font-size:35px;
-    background:none;
-    border:none;
-    color:#fff;
-    cursor:pointer;
-}
-
-.nav-buttons{
-    margin-top:10px;
-}
-
-.nav-buttons button{
-    padding:8px 14px;
-    margin:0 5px;
-    cursor:pointer;
-    border:none;
-    border-radius:6px;
-}
+    .close-btn{
+        font-size:35px;
+    }
 }
 /* ——— Service cards (glassmorphism) ——— */
 .service-card {
   padding: 2rem;
   border-radius: 1.25rem;
-  border: 1px solid rgba(42, 92, 255, 0.22);
+  border: 1px solid rgba(79, 111, 62, 0.22);
   background: rgba(0, 0, 0, 0.02);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -512,14 +570,14 @@ body {
 
 .service-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(42, 92, 255, 0.5);
-  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(42, 92, 255, 0.1);
+  border-color: rgba(79, 111, 62, 0.5);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.1), 0 0 32px rgba(79, 111, 62, 0.1);
 }
 
 .service-card--featured {
   border-color: var(--electric);
-  background: rgba(42, 92, 255, 0.05);
-  box-shadow: 0 0 40px rgba(42, 92, 255, 0.1);
+  background: rgba(79, 111, 62, 0.05);
+  box-shadow: 0 0 40px rgba(79, 111, 62, 0.1);
 }
 
 .service-tag {
@@ -600,7 +658,7 @@ body {
 .social-links a:hover {
   transform: translateY(-3px);
   border-color: var(--electric);
-  box-shadow: 0 4px 16px rgba(42, 92, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(79, 111, 62, 0.15);
   color: var(--electric);
 }
 
@@ -617,8 +675,8 @@ body {
 .float-field input:focus,
 .float-field textarea:focus {
   border-color: var(--electric);
-  background: rgba(42, 92, 255, 0.04);
-  box-shadow: 0 0 0 3px rgba(42, 92, 255, 0.12), 0 0 24px rgba(42, 92, 255, 0.15);
+  background: rgba(79, 111, 62, 0.04);
+  box-shadow: 0 0 0 3px rgba(79, 111, 62, 0.12), 0 0 24px rgba(79, 111, 62, 0.15);
 }
 
 .submit-btn {
