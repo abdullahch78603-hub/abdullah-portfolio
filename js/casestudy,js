@@ -1,0 +1,137 @@
+// Case Study popup — self-contained.
+// Card ki image ya "View Case Study" par click => poori image + title + description popup me.
+// HTML ya CSS me kuch aur add karne ki zaroorat nahi, sirf yeh script load honi chahiye.
+(function () {
+  function init() {
+    // ---------- styles ----------
+    var style = document.createElement("style");
+    style.textContent = `
+      .csp-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;justify-content:center;align-items:flex-start;z-index:2147483000;padding:20px;box-sizing:border-box;overflow-y:auto}
+      .csp-overlay.open{display:flex}
+      .csp-box{position:relative;width:100%;max-width:1100px;margin:auto;background:#11120f;border:1px solid rgba(79,111,62,.35);border-radius:18px;overflow:hidden}
+      .csp-close{position:fixed;top:16px;right:20px;z-index:3;width:42px;height:42px;border:none;border-radius:50%;background:#fff;color:#0b0b0b;font-size:28px;line-height:1;cursor:pointer}
+      .csp-stage{position:relative;background:#000;display:flex;justify-content:center}
+      .csp-stage img{display:block;width:100%;height:auto}
+      .csp-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.88);color:#0b0b0b;font-size:28px;line-height:1;cursor:pointer}
+      .csp-prev{left:12px}.csp-next{right:12px}
+      .csp-counter{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);padding:4px 12px;border-radius:9999px;background:rgba(0,0,0,.65);color:#fff;font-size:.75rem;letter-spacing:.1em}
+      .csp-info{padding:1.5rem 1.75rem 2rem}
+      .csp-info h3{color:#fff;font-family:'Montserrat',sans-serif;font-size:1.5rem;font-weight:800;margin:0 0 .75rem}
+      .csp-info p{color:rgba(255,255,255,.72);font-size:.95rem;line-height:1.7;margin:0 0 .6rem}
+      .csp-info strong{color:#8fb372}
+      .case-study-card,.case-study-card *{cursor:pointer}
+      @media(max-width:600px){.csp-overlay{padding:10px}.csp-nav{width:36px;height:36px;font-size:22px}.csp-info{padding:1.25rem}}
+    `;
+    document.head.appendChild(style);
+
+    // ---------- popup ----------
+    var overlay = document.createElement("div");
+    overlay.className = "csp-overlay";
+    overlay.innerHTML =
+      '<button class="csp-close" aria-label="Close">&times;</button>' +
+      '<div class="csp-box">' +
+        '<div class="csp-stage">' +
+          '<button class="csp-nav csp-prev" aria-label="Previous">&#8249;</button>' +
+          '<img src="" alt="" />' +
+          '<button class="csp-nav csp-next" aria-label="Next">&#8250;</button>' +
+          '<span class="csp-counter"></span>' +
+        '</div>' +
+        '<div class="csp-info"><h3></h3><div class="csp-desc"></div></div>' +
+      '</div>';
+    document.body.appendChild(overlay);
+
+    var box = overlay.querySelector(".csp-box");
+    var img = overlay.querySelector(".csp-stage img");
+    var counter = overlay.querySelector(".csp-counter");
+    var titleEl = overlay.querySelector("h3");
+    var descEl = overlay.querySelector(".csp-desc");
+    var prevBtn = overlay.querySelector(".csp-prev");
+    var nextBtn = overlay.querySelector(".csp-next");
+    var closeBtn = overlay.querySelector(".csp-close");
+
+    var slides = [];
+    var index = 0;
+
+    function show(i) {
+      index = (i + slides.length) % slides.length;
+      img.src = slides[index];
+      counter.textContent = (index + 1) + " / " + slides.length;
+    }
+
+    function openCard(card) {
+      var data = card.getAttribute("data-slides") || "";
+      slides = data.split("|").map(function (s) { return s.trim(); }).filter(Boolean);
+
+      // data-slides na ho to card ki apni image hi poori khulegi
+      if (!slides.length) {
+        var thumb = card.querySelector("img");
+        if (thumb) slides = [thumb.getAttribute("src")];
+      }
+      if (!slides.length) return;
+
+      var title = card.querySelector("h3");
+      var details = card.querySelector(".case-study-details");
+      var summary = card.querySelector(".case-study-summary") || card.querySelector(".case-study-body p");
+
+      titleEl.textContent = title ? title.textContent : "";
+      descEl.innerHTML = details
+        ? details.innerHTML
+        : (summary ? "<p>" + summary.textContent + "</p>" : "");
+
+      var single = slides.length === 1;
+      prevBtn.style.display = nextBtn.style.display = counter.style.display = single ? "none" : "";
+
+      overlay.classList.add("open");
+      document.body.classList.add("modal-open");
+      show(0);
+      overlay.scrollTop = 0;
+    }
+
+    function closePopup() {
+      overlay.classList.remove("open");
+      img.src = "";
+      document.body.classList.remove("modal-open");
+    }
+
+    // Click delegation (capture): card ke andar kahin bhi click => popup.
+    // Capture use kiya hai taake purana image modal beech me na aaye.
+    document.addEventListener("click", function (e) {
+      if (overlay.contains(e.target)) return;
+      var card = e.target.closest && e.target.closest(".case-study-card");
+      if (!card) return;
+      e.preventDefault();
+      e.stopPropagation();
+      openCard(card);
+    }, true);
+
+    prevBtn.addEventListener("click", function (e) { e.stopPropagation(); show(index - 1); });
+    nextBtn.addEventListener("click", function (e) { e.stopPropagation(); show(index + 1); });
+    closeBtn.addEventListener("click", closePopup);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) closePopup(); });
+
+    document.addEventListener("keydown", function (e) {
+      if (!overlay.classList.contains("open")) return;
+      if (e.key === "Escape") closePopup();
+      if (e.key === "ArrowLeft" && slides.length > 1) show(index - 1);
+      if (e.key === "ArrowRight" && slides.length > 1) show(index + 1);
+    });
+
+    var startX = null;
+    var stage = overlay.querySelector(".csp-stage");
+    stage.addEventListener("touchstart", function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    stage.addEventListener("touchend", function (e) {
+      if (startX === null || slides.length < 2) return;
+      var diff = e.changedTouches[0].clientX - startX;
+      if (Math.abs(diff) > 50) show(diff > 0 ? index - 1 : index + 1);
+      startX = null;
+    });
+
+    console.log("Case study popup ready — cards found:", document.querySelectorAll(".case-study-card").length);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
