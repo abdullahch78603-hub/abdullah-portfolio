@@ -339,6 +339,7 @@ body.modal-open {
 .portfolio-tabs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.75rem;
   margin-bottom: 2.5rem;
 }
@@ -557,6 +558,99 @@ body.modal-open {
         font-size:35px;
     }
 }
+
+/* ===== CASE STUDIES ===== */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.case-study-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid rgba(79, 111, 62, .25);
+  background: #151611;
+  text-decoration: none;
+  transition: .4s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(79, 111, 62, .25);
+}
+
+.case-study-thumb {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.case-study-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+  transition: .5s ease;
+}
+
+.case-study-card:hover .case-study-thumb img {
+  transform: scale(1.06);
+}
+
+.case-study-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.case-study-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #8fb372;
+}
+
+.case-study-body h3 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.case-study-body p {
+  color: rgba(255, 255, 255, .6);
+  font-size: .875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.case-study-link {
+  margin-top: .5rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media (max-width: 992px) {
+  .case-study-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .case-study-grid { grid-template-columns: 1fr; padding: 0 15px; }
+}
+
 /* ——— Service cards (glassmorphism) ——— */
 .service-card {
   padding: 2rem;
@@ -744,3 +838,12 @@ footer img{
     display: none;
   }
 }
+
+/* ===== CASE STUDY card summary ===== */
+.case-study-summary {
+  color: rgba(255, 255, 255, .6);
+  font-size: .875rem;
+  line-height: 1.6;
+  margin: 0;
+}
+/* (Case study popup ki styling casestudy.js khud inject karti hai) */
